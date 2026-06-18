@@ -33,6 +33,7 @@ if "current_player_idx" not in st.session_state: st.session_state.current_player
 if "board" not in st.session_state: st.session_state.board = []
 if "available_options" not in st.session_state: st.session_state.available_options = []
 if "q_idx" not in st.session_state: st.session_state.q_idx = 0
+if "last_category" not in st.session_state: st.session_state.last_category = ""
 
 # --- SPIELLOGIK ---
 def next_turn():
@@ -50,25 +51,21 @@ def handle_click(board_index):
     clicked_item = st.session_state.board[board_index]
     current_player = st.session_state.players[st.session_state.current_player_idx]
     
-    # Mathematische Berechnung der Extremwerte für die Gleichstand-Logik
     current_pool_items = [item for item in st.session_state.board if item["name"] in st.session_state.available_options]
     pool_sort_values = [item["sort_value"] for item in current_pool_items]
     
-    killer_val = max(pool_sort_values) # Der aktuell stärkste Wert
-    ziel_val = min(pool_sort_values)   # Der aktuell schwächste Wert
+    killer_val = max(pool_sort_values)
+    ziel_val = min(pool_sort_values)
     clicked_val = clicked_item["sort_value"]
     
     if clicked_val == killer_val:
-        points = 0
         current_player["active"] = False
         status_text = "💥 AUSGESCHIEDEN (Killer-Platz)"
     elif clicked_val == ziel_val:
-        points = 3
-        current_player["score"] += points
+        current_player["score"] += 3
         status_text = "🏆 +3 PUNKTE (Sicheres Ziel)"
     else:
-        points = 1
-        current_player["score"] += points
+        current_player["score"] += 1
         status_text = "✅ +1 PUNKT"
 
     clicked_item["clicked_by"] = current_player["name"]
@@ -85,7 +82,6 @@ if st.session_state.phase == "setup":
     
     with col_p:
         st.subheader("👥 Spieler")
-        # Standard-Namen vorausgewählt
         default_crew = ["TroX", "Connor", "Ritze", "Jojo"]
         num_players = st.number_input("Anzahl der Spieler", min_value=1, max_value=8, value=4)
         player_names = []
@@ -95,22 +91,23 @@ if st.session_state.phase == "setup":
             player_names.append(name)
             
     with col_q:
-        st.subheader("📚 Kategorie & Frage")
-        category = st.selectbox("1. Kategorie wählen", list(CATEGORIES.keys()))
-        
+        st.subheader("📚 Kategorie")
+        category = st.selectbox("Wähle eine Kategorie:", list(CATEGORIES.keys()))
         q_list = CATEGORIES[category]
-        q_titles = [q["question"] for q in q_list]
         
-        # Sicherheits-Check, falls die Kategorie gewechselt wird
-        if st.session_state.q_idx >= len(q_titles):
-            st.session_state.q_idx = 0
-            
-        selected_q_text = st.selectbox("2. Frage wählen", q_titles, index=st.session_state.q_idx)
-        st.session_state.q_idx = q_titles.index(selected_q_text)
+        # Falls die Kategorie wechselt, wählen wir automatisch eine zufällige Frage aus
+        if st.session_state.last_category != category:
+            st.session_state.q_idx = random.randint(0, len(q_list) - 1)
+            st.session_state.last_category = category
+
+        st.info(f"🎲 Aktuelle Zufallsfrage: **\"{q_list[st.session_state.q_idx]['question']}\"**")
         
-        if st.button("🎲 Zufällige Frage aus Kategorie wählen"):
-            st.session_state.q_idx = random.randint(0, len(q_list)-1)
-            st.rerun()
+        # Option zum manuellen Wechseln der Frage
+        manual_change = st.checkbox("🔍 Frage manuell aus Katalog wählen")
+        if manual_change:
+            q_titles = [q["question"] for q in q_list]
+            selected_q_text = st.selectbox("Frage bestimmen:", q_titles, index=st.session_state.q_idx)
+            st.session_state.q_idx = q_titles.index(selected_q_text)
             
     st.write("---")
     if st.button("🚀 Spiel starten", use_container_width=True):
@@ -119,7 +116,6 @@ if st.session_state.phase == "setup":
         
         raw_data = sorted(CATEGORIES[category][st.session_state.q_idx]["data"], key=lambda x: x["sort_value"], reverse=True)
         
-        # Ränge berechnen inkl. Gleichstände (Ties)
         board_data = []
         available_names = []
         current_rank = 1
@@ -192,5 +188,7 @@ elif st.session_state.phase in ["playing", "game_over"]:
             col_btn = st.columns([1, 2, 1])[1]
             with col_btn:
                 if st.button("🔄 Neues Spiel / Kategorie wechseln", use_container_width=True):
+                    # Bei Neustart wird der Kategoriewechsel-Trigger zurückgesetzt
+                    st.session_state.last_category = ""
                     st.session_state.phase = "setup"
                     st.rerun()

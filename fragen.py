@@ -197,3 +197,393 @@ CATEGORIES = {
         }
     ]
 }
+
+
+# ==============================================================================
+# NEUE FRAGEN-ERWEITERUNG (Einfach ganz unten an die Datei anhängen)
+# ==============================================================================
+
+CATEGORIES["Fußball"].extend([
+    {
+        "question": "Welche Nationalmannschaft hatte bei der WM 2022 das höchste Durchschnittsalter im Kader?",
+        "data": [
+            {"name": "Iran", "value": "28.9 Jahre", "sort_value": 28.9},
+            {"name": "Mexiko", "value": "28.5 Jahre", "sort_value": 28.5},
+            {"name": "Argentinien", "value": "27.9 Jahre", "sort_value": 27.9},
+            {"name": "Belgien", "value": "27.8 Jahre", "sort_value": 27.8},
+            {"name": "Costa Rica", "value": "27.2 Jahre", "sort_value": 27.2},
+            {"name": "Kroatien", "value": "27.1 Jahre", "sort_value": 27.1},
+            {"name": "Brasilien", "value": "27.0 Jahre", "sort_value": 27.0},
+            {"name": "Uruguay", "value": "26.5 Jahre", "sort_value": 26.5},
+            {"name": "Portugal", "value": "26.2 Jahre", "sort_value": 26.2},
+            {"name": "Deutschland", "value": "26.7 Jahre", "sort_value": 26.7},
+            {"name": "Frankreich", "value": "26.0 Jahre", "sort_value": 26.0},
+            {"name": "USA", "value": "25.2 Jahre", "sort_value": 25.2}
+        ]
+    },
+    {
+        "question": "Welche Nationalmannschaft hat in der gesamten Geschichte der Weltmeisterschaften die meisten Tore erzielt?",
+        "data": [
+            {"name": "Brasilien", "value": "237 Tore", "sort_value": 237},
+            {"name": "Deutschland", "value": "232 Tore", "sort_value": 232},
+            {"name": "Argentinien", "value": "152 Tore", "sort_value": 152},
+            {"name": "Frankreich", "value": "136 Tore", "sort_value": 136},
+            {"name": "Italien", "value": "128 Tore", "sort_value": 128},
+            {"name": "Spanien", "value": "108 Tore", "sort_value": 108},
+            {"name": "England", "value": "104 Tore", "sort_value": 104},
+            {"name": "Niederlande", "value": "96 Tore", "sort_value": 96},
+            {"name": "Uruguay", "value": "89 Tore", "sort_value": 89},
+            {"name": "Ungarn", "value": "87 Tore", "sort_value": 87},
+            {"name": "Schweden", "value": "80 Tore", "sort_value": 80},
+            {"name": "Belgien", "value": "69 Tore", "sort_value": 69}
+        ]
+    },
+    {
+        "question": "Welcher dieser weltweiten Vereine hat in der Dekade von 2015 bis 2025 das größte finanzielle Transferplus erwirtschaftet?",
+        "data": [
+            {"name": "SL Benfica", "value": "+816 Mio. €", "sort_value": 816},
+            {"name": "Ajax Amsterdam", "value": "+473 Mio. €", "sort_value": 473},
+            {"name": "RB Salzburg", "value": "+401 Mio. €", "sort_value": 401},
+            {"name": "Sporting CP", "value": "+350 Mio. €", "sort_value": 350},
+            {"name": "AS Monaco", "value": "+310 Mio. €", "sort_value": 310},
+            {"name": "FC Porto", "value": "+290 Mio. €", "sort_value": 290},
+            {"name": "Lille OSC", "value": "+260 Mio. €", "sort_value": 260},
+            {"name": "Olympique Lyon", "value": "+210 Mio. €", "sort_value": 210},
+            {"name": "Atalanta Bergamo", "value": "+180 Mio. €", "sort_value": 180},
+            {"name": "Udinese Calcio", "value": "+130 Mio. €", "sort_value": 130},
+            {"name": "AZ Alkmaar", "value": "+110 Mio. €", "sort_value": 110},
+            {"name": "PSV Eindhoven", "value": "+95 Mio. €", "sort_value": 95}
+        ]
+    },
+    {
+        "question": "Welcher dieser Trainer stand in der Geschichte der UEFA Champions League bei den meisten Spielen an der Seitenlinie?",
+        "data": [
+            {"name": "Carlo Ancelotti", "value": "218 Spiele", "sort_value": 218},
+            {"name": "Sir Alex Ferguson", "value": "190 Spiele", "sort_value": 190},
+            {"name": "Pep Guardiola", "value": "189 Spiele", "sort_value": 189},
+            {"name": "Arsène Wenger", "value": "178 Spiele", "sort_value": 178},
+            {"name": "José Mourinho", "value": "154 Spiele", "sort_value": 154},
+            {"name": "Diego Simeone", "value": "128 Spiele", "sort_value": 128},
+            {"name": "Mircea Lucescu", "value": "115 Spiele", "sort_value": 115},
+            {"name": "Jürgen Klopp", "value": "100 Spiele", "sort_value": 100},
+            {"name": "Massimiliano Allegri", "value": "100 Spiele", "sort_value": 100},
+            {"name": "Ottmar Hitzfeld", "value": "97 Spiele", "sort_value": 97},
+            {"name": "Louis van Gaal", "value": "95 Spiele", "sort_value": 95},
+            {"name": "Rafael Benítez", "value": "95 Spiele", "sort_value": 95}
+        ]
+    },
+    {
+        "question": "Welcher dieser Spitzen-Trainer besitzt historisch den besten Punkteschnitt pro Spiel in der Champions League (mind. 20 Spiele)?",
+        "data": [
+            {"name": "Hansi Flick", "value": "2.28 Punkte/Spiel", "sort_value": 2.28},
+            {"name": "Jupp Heynckes", "value": "2.26 Punkte/Spiel", "sort_value": 2.26},
+            {"name": "Vincent Kompany", "value": "2.19 Punkte/Spiel", "sort_value": 2.19},
+            {"name": "Mikel Arteta", "value": "2.14 Punkte/Spiel", "sort_value": 2.14},
+            {"name": "Luis Enrique", "value": "2.06 Punkte/Spiel", "sort_value": 2.06},
+            {"name": "Frank Rijkaard", "value": "2.05 Punkte/Spiel", "sort_value": 2.05},
+            {"name": "Pep Guardiola", "value": "2.04 Punkte/Spiel", "sort_value": 2.04},
+            {"name": "Zinedine Zidane", "value": "2.02 Punkte/Spiel", "sort_value": 2.02},
+            {"name": "Louis van Gaal", "value": "1.97 Punkte/Spiel", "sort_value": 1.97},
+            {"name": "Thomas Tuchel", "value": "1.96 Punkte/Spiel", "sort_value": 1.96},
+            {"name": "Carlo Ancelotti", "value": "1.85 Punkte/Spiel", "sort_value": 1.85},
+            {"name": "Sir Alex Ferguson", "value": "1.80 Punkte/Spiel", "sort_value": 1.80}
+        ]
+    },
+    {
+        "question": "Welcher dieser Nationalspieler hat die meisten Tore für Deutschland erzielt? (Miroslav Klose wurde als Nummer 1 weggelassen!)",
+        "data": [
+            {"name": "Gerd Müller", "value": "68 Tore", "sort_value": 68},
+            {"name": "Lukas Podolski", "value": "49 Tore", "sort_value": 49},
+            {"name": "Rudi Völler", "value": "47 Tore", "sort_value": 47},
+            {"name": "Jürgen Klinsmann", "value": "47 Tore", "sort_value": 47},
+            {"name": "Karl-Heinz Rummenigge", "value": "45 Tore", "sort_value": 45},
+            {"name": "Thomas Müller", "value": "45 Tore", "sort_value": 45},
+            {"name": "Uwe Seeler", "value": "43 Tore", "sort_value": 43},
+            {"name": "Michael Ballack", "value": "42 Tore", "sort_value": 42},
+            {"name": "Oliver Bierhoff", "value": "37 Tore", "sort_value": 37},
+            {"name": "Bastian Schweinsteiger", "value": "24 Tore", "sort_value": 24},
+            {"name": "Timo Werner", "value": "24 Tore", "sort_value": 24},
+            {"name": "Serge Gnabry", "value": "22 Tore", "sort_value": 22}
+        ]
+    },
+    {
+        "question": "Welcher dieser europäischen Traditionsvereine stand am häufigsten im Halbfinale der Champions League / des Europapokals der Landesmeister? (Real Madrid weggelassen!)",
+        "data": [
+            {"name": "FC Bayern München", "value": "21 Mal", "sort_value": 21},
+            {"name": "FC Barcelona", "value": "16 Mal", "sort_value": 16},
+            {"name": "AC Mailand", "value": "13 Mal", "sort_value": 13},
+            {"name": "Juventus Turin", "value": "12 Mal", "sort_value": 12},
+            {"name": "FC Liverpool", "value": "12 Mal", "sort_value": 12},
+            {"name": "Manchester United", "value": "12 Mal", "sort_value": 12},
+            {"name": "Inter Mailand", "value": "8 Mal", "sort_value": 8},
+            {"name": "Chelsea FC", "value": "8 Mal", "sort_value": 8},
+            {"name": "Ajax Amsterdam", "value": "8 Mal", "sort_value": 8},
+            {"name": "Arsenal FC", "value": "3 Mal", "sort_value": 3},
+            {"name": "Atlético Madrid", "value": "3 Mal", "sort_value": 3},
+            {"name": "Paris Saint-Germain", "value": "3 Mal", "sort_value": 3}
+        ]
+    },
+    {
+        "question": "Welcher dieser Offensivspieler hatte in der Saison 25/26 die größte positive Differenz zwischen real erzielten Toren und den Expected Goals (Top-Überperformer)?",
+        "data": [
+            {"name": "Harry Kane", "value": "+5.40 Tore über xG", "sort_value": 5.40},
+            {"name": "Serhou Guirassy", "value": "+4.20 Tore über xG", "sort_value": 4.20},
+            {"name": "Deniz Undav", "value": "+3.90 Tore über xG", "sort_value": 3.90},
+            {"name": "Cole Palmer", "value": "+3.80 Tore über xG", "sort_value": 3.80},
+            {"name": "Son Heung-min", "value": "+3.50 Tore über xG", "sort_value": 3.50},
+            {"name": "Bukayo Saka", "value": "+2.10 Tore über xG", "sort_value": 2.10},
+            {"name": "Jude Bellingham", "value": "+1.50 Tore über xG", "sort_value": 1.50},
+            {"name": "Robert Lewandowski", "value": "+0.80 Tore über xG", "sort_value": 0.80},
+            {"name": "Lionel Messi", "value": "-0.50 Tore unter xG", "sort_value": -0.50},
+            {"name": "Vinícius Júnior", "value": "-1.10 Tore unter xG", "sort_value": -1.10},
+            {"name": "Erling Haaland", "value": "-1.20 Tore unter xG", "sort_value": -1.20},
+            {"name": "Kylian Mbappé", "value": "-2.10 Tore unter xG", "sort_value": -2.10}
+        ]
+    },
+    {
+        "question": "Welcher dieser deutschen Vereine hat historisch in der Bundesliga am häufigsten gegen den FC Bayern München gewonnen?",
+        "data": [
+            {"name": "Borussia Mönchengladbach", "value": "28 Siege", "sort_value": 28},
+            {"name": "Werder Bremen", "value": "26 Siege", "sort_value": 26},
+            {"name": "Borussia Dortmund", "value": "25 Siege", "sort_value": 25},
+            {"name": "VfB Stuttgart", "value": "19 Siege", "sort_value": 19},
+            {"name": "Schalke 04", "value": "18 Siege", "sort_value": 18},
+            {"name": "Eintracht Frankfurt", "value": "17 Siege", "sort_value": 17},
+            {"name": "Hamburger SV", "value": "16 Siege", "sort_value": 16},
+            {"name": "1. FC Köln", "value": "15 Siege", "sort_value": 15},
+            {"name": "Bayer 04 Leverkusen", "value": "14 Siege", "sort_value": 14},
+            {"name": "Hertha BSC", "value": "11 Siege", "sort_value": 11},
+            {"name": "VfL Wolfsburg", "value": "6 Siege", "sort_value": 6},
+            {"name": "TSG Hoffenheim", "value": "5 Siege", "sort_value": 5}
+        ]
+    },
+    {
+        "question": "Welcher dieser europäischen Spitzenvereine hat auf Instagram die meisten Follower (Stand 2026)?",
+        "data": [
+            {"name": "Real Madrid", "value": "177 Mio. Follower", "sort_value": 177.0},
+            {"name": "FC Barcelona", "value": "142 Mio. Follower", "sort_value": 142.0},
+            {"name": "Paris Saint-Germain", "value": "65 Mio. Follower", "sort_value": 65.0},
+            {"name": "Manchester United", "value": "64 Mio. Follower", "sort_value": 64.0},
+            {"name": "Juventus Turin", "value": "60 Mio. Follower", "sort_value": 60.0},
+            {"name": "Manchester City", "value": "56 Mio. Follower", "sort_value": 56.0},
+            {"name": "FC Liverpool", "value": "48 Mio. Follower", "sort_value": 48.0},
+            {"name": "FC Bayern München", "value": "43 Mio. Follower", "sort_value": 43.0},
+            {"name": "FC Chelsea", "value": "42 Mio. Follower", "sort_value": 42.0},
+            {"name": "Arsenal FC", "value": "31 Mio. Follower", "sort_value": 31.0},
+            {"name": "Borussia Dortmund", "value": "21 Mio. Follower", "sort_value": 21.0},
+            {"name": "Atlético Madrid", "value": "17 Mio. Follower", "sort_value": 17.0}
+        ]
+    },
+    {
+        "question": "Welcher dieser weltweiten Fußballvereine hat die höchste Anzahl an offiziell eingetragenen, zahlenden Mitgliedern?",
+        "data": [
+            {"name": "FC Bayern München", "value": "330.000 Mitglieder", "sort_value": 330000},
+            {"name": "River Plate", "value": "250.000 Mitglieder", "sort_value": 250000},
+            {"name": "SL Benfica", "value": "240.000 Mitglieder", "sort_value": 240000},
+            {"name": "Boca Juniors", "value": "230.000 Mitglieder", "sort_value": 230000},
+            {"name": "Borussia Dortmund", "value": "200.000 Mitglieder", "sort_value": 200000},
+            {"name": "Schalke 04", "value": "180.000 Mitglieder", "sort_value": 180000},
+            {"name": "FC Barcelona", "value": "150.000 Mitglieder", "sort_value": 150000},
+            {"name": "Eintracht Frankfurt", "value": "140.000 Mitglieder", "sort_value": 140000},
+            {"name": "1. FC Köln", "value": "135.000 Mitglieder", "sort_value": 135000},
+            {"name": "VfB Stuttgart", "value": "110.000 Mitglieder", "sort_value": 110000},
+            {"name": "Real Madrid", "value": "100.000 Mitglieder", "sort_value": 100000},
+            {"name": "Borussia Mönchengladbach", "value": "100.000 Mitglieder", "sort_value": 100000}
+        ]
+    },
+    {
+        "question": "Welches dieser historischen Fußballspiele im Stadion verzeichnete die höchste offizielle (oder präzise gezählte) Zuschauerzahl direkt vor Ort?",
+        "data": [
+            {"name": "WM-Finale 1950 (Uruguay vs. Brasilien)", "value": "173.850 Zuschauer", "sort_value": 173850},
+            {"name": "Europapokal-Finale 1960 (Real vs. Eintracht Frankfurt)", "value": "127.621 Zuschauer", "sort_value": 127621},
+            {"name": "FA-Cup Finale 1923 (Bolton vs. West Ham)", "value": "126.047 Zuschauer", "sort_value": 126047},
+            {"name": "WM-Finale 1986 (Argentinien vs. Westdeutschland)", "value": "114.600 Zuschauer", "sort_value": 114600},
+            {"name": "El Clásico 2018 (Barcelona vs. Real Madrid)", "value": "97.939 Zuschauer", "sort_value": 97939},
+            {"name": "WM-Finale 1994 (Brasilien vs. Italien)", "value": "94.194 Zuschauer", "sort_value": 94194},
+            {"name": "CL-Finale 2024 (Dortmund vs. Real Madrid)", "value": "86.211 Zuschauer", "sort_value": 86211},
+            {"name": "WM-Finale 2018 (Frankreich vs. Kroatien)", "value": "78.011 Zuschauer", "sort_value": 78011},
+            {"name": "CL-Finale 2022 (Real Madrid vs. Liverpool)", "value": "75.000 Zuschauer", "sort_value": 75000},
+            {"name": "WM-Finale 2014 (Deutschland vs. Argentinien)", "value": "74.738 Zuschauer", "sort_value": 74738},
+            {"name": "EM-Finale 2021 (Italien vs. England)", "value": "67.173 Zuschauer", "sort_value": 67173},
+            {"name": "WM-Eröffnungsspiel 2006 (Deutschland vs. Costa Rica)", "value": "66.000 Zuschauer", "sort_value": 66000}
+        ]
+    },
+    {
+        "question": "Welcher dieser Akteure hat die meisten Weltmeistertitel als aktiver Spieler gewonnen?",
+        "data": [
+            {"name": "Pelé (Brasilien)", "value": "3 WM-Titel", "sort_value": 3},
+            {"name": "Cafu (Brasilien)", "value": "2 WM-Titel", "sort_value": 2},
+            {"name": "Ronaldo (Brasilien)", "value": "2 WM-Titel", "sort_value": 2},
+            {"name": "Daniel Passarella (Argentinien)", "value": "2 WM-Titel", "sort_value": 2},
+            {"name": "Giuseppe Meazza (Italien)", "value": "2 WM-Titel", "sort_value": 2},
+            {"name": "Giovanni Ferrari (Italien)", "value": "2 WM-Titel", "sort_value": 2},
+            {"name": "Garrincha (Brasilien)", "value": "2 WM-Titel", "sort_value": 2},
+            {"name": "Gilmar (Brasilien)", "value": "2 WM-Titel", "sort_value": 2},
+            {"name": "Zagallo (Brasilien)", "value": "2 WM-Titel", "sort_value": 2},
+            {"name": "Franz Beckenbauer (Deutschland)", "value": "1 WM-Titel", "sort_value": 1},
+            {"name": "Diego Maradona (Argentinien)", "value": "1 WM-Titel", "sort_value": 1},
+            {"name": "Lionel Messi (Argentinien)", "value": "1 WM-Titel", "sort_value": 1}
+        ]
+    },
+    {
+        "question": "Welche Nationalmannschaft hat in der Geschichte der Weltmeisterschaften die meisten Platzverweise (Rote Karten) hinnehmen müssen?",
+        "data": [
+            {"name": "Brasilien", "value": "11 Rote Karten", "sort_value": 11},
+            {"name": "Argentinien", "value": "10 Rote Karten", "sort_value": 10},
+            {"name": "Uruguay", "value": "9 Rote Karten", "sort_value": 9},
+            {"name": "Italien", "value": "8 Rote Karten", "sort_value": 8},
+            {"name": "Kamerun", "value": "8 Rote Karten", "sort_value": 8},
+            {"name": "Deutschland", "value": "7 Rote Karten", "sort_value": 7},
+            {"name": "Niederlande", "value": "7 Rote Karten", "sort_value": 7},
+            {"name": "Mexiko", "value": "6 Rote Karten", "sort_value": 6},
+            {"name": "Frankreich", "value": "6 Rote Karten", "sort_value": 6},
+            {"name": "Portugal", "value": "6 Rote Karten", "sort_value": 6},
+            {"name": "Dänemark", "value": "4 Rote Karten", "sort_value": 4},
+            {"name": "England", "value": "3 Rote Karten", "sort_value": 3}
+        ]
+    },
+    {
+        "question": "Wer war der biologisch jüngste Torschütze in der Historie der Weltmeisterschaften?",
+        "data": [
+            {"name": "Pelé (1958)", "value": "17.6 Jahre alt", "sort_value": 17.6},
+            {"name": "Manuel Rosas (1930)", "value": "18.3 Jahre alt", "sort_value": 18.3},
+            {"name": "Gavi (2022)", "value": "18.3 Jahre alt", "sort_value": 18.3},
+            {"name": "Michael Owen (1998)", "value": "18.5 Jahre alt", "sort_value": 18.5},
+            {"name": "Nicolae Kovacs (1930)", "value": "18.6 Jahre alt", "sort_value": 18.6},
+            {"name": "Dmitry Sychev (2002)", "value": "18.7 Jahre alt", "sort_value": 18.7},
+            {"name": "Lionel Messi (2006)", "value": "18.9 Jahre alt", "sort_value": 18.9},
+            {"name": "Julian Green (2014)", "value": "19.0 Jahre alt", "sort_value": 19.0},
+            {"name": "Divock Origi (2014)", "value": "19.2 Jahre alt", "sort_value": 19.2},
+            {"name": "Jude Bellingham (2022)", "value": "19.4 Jahre alt", "sort_value": 19.4},
+            {"name": "Kylian Mbappé (2018)", "value": "19.5 Jahre alt", "sort_value": 19.5},
+            {"name": "Bukayo Saka (2022)", "value": "21.2 Jahre alt", "sort_value": 21.2}
+        ]
+    }
+])
+
+
+# ==============================================================================
+# WEITERE DATENBASIERTE FUSSBALL-FRAGEN (Einfach ganz unten anhängen)
+# ==============================================================================
+
+CATEGORIES["Fußball"].extend([
+    {
+        "question": "Welches dieser einzelnen Fußballspiele verzeichnete weltweit die höchste offizielle Live-TV/Streaming-Reichweite? (Reichweite des Einzelspiels in Millionen Live-Zuschauern)",
+        "data": [
+            {"name": "WM-Finale 2022 (Argentinien vs. Frankreich)", "value": "1.500 Mio. Zuschauer", "sort_value": 1500},
+            {"name": "WM-Finale 2018 (Frankreich vs. Kroatien)", "value": "1.120 Mio. Zuschauer", "sort_value": 1120},
+            {"name": "WM-Finale 2002 (Brasilien vs. Deutschland)", "value": "1.100 Mio. Zuschauer", "sort_value": 1100},
+            {"name": "WM-Finale 2014 (Deutschland vs. Argentinien)", "value": "1.010 Mio. Zuschauer", "sort_value": 1010},
+            {"name": "WM-Finale 2010 (Spanien vs. Niederlande)", "value": "910 Mio. Zuschauer", "sort_value": 910},
+            {"name": "WM-Finale 2006 (Italien vs. Frankreich)", "value": "715 Mio. Zuschauer", "sort_value": 715},
+            {"name": "EM-Finale 2024 (Spanien vs. England)", "value": "340 Mio. Zuschauer", "sort_value": 340},
+            {"name": "EM-Finale 2020 (Italien vs. England)", "value": "328 Mio. Zuschauer", "sort_value": 328},
+            {"name": "Champions-League-Finale 2015 (Barcelona vs. Juventus)", "value": "180 Mio. Zuschauer", "sort_value": 180},
+            {"name": "WM-Viertelfinale 2022 (England vs. Frankreich)", "value": "150 Mio. Zuschauer", "sort_value": 150},
+            {"name": "Champions-League-Finale 2024 (Dortmund vs. Real Madrid)", "value": "140 Mio. Zuschauer", "sort_value": 140},
+            {"name": "Euro-Viertelfinale 2024 (Deutschland vs. Spanien)", "value": "115 Mio. Zuschauer", "sort_value": 115}
+        ]
+    },
+    {
+        "question": "Welcher dieser Fußballspieler erreichte die höchste jemals offiziell gemessene Maximalgeschwindigkeit (Top-Speed in km/h)?",
+        "data": [
+            {"name": "Sven Botman", "value": "39.21 km/h", "sort_value": 39.21},
+            {"name": "Darwin Núñez", "value": "38.00 km/h", "sort_value": 38.00},
+            {"name": "Kylian Mbappé", "value": "37.90 km/h", "sort_value": 37.90},
+            {"name": "Gareth Bale", "value": "36.90 km/h", "sort_value": 36.90},
+            {"name": "Antonio Rüdiger", "value": "36.70 km/h", "sort_value": 36.70},
+            {"name": "Mykhailo Mudryk", "value": "36.63 km/h", "sort_value": 36.63},
+            {"name": "Ousmane Dembélé", "value": "36.60 km/h", "sort_value": 36.60},
+            {"name": "Adama Traoré", "value": "36.60 km/h", "sort_value": 36.60},
+            {"name": "Mohamed Salah", "value": "36.60 km/h", "sort_value": 36.60},
+            {"name": "Alphonso Davies", "value": "36.51 km/h", "sort_value": 36.51},
+            {"name": "Erling Haaland", "value": "36.30 km/h", "sort_value": 36.30},
+            {"name": "Achraf Hakimi", "value": "36.25 km/h", "sort_value": 36.25}
+        ]
+    },
+    {
+        "question": "Welcher dieser Spieler hat vor seinem exakt 20. Geburtstag die meisten wettbewerbsübergreifenden Profi-Spiele (Klub & Nationalteam) absolviert?",
+        "data": [
+            {"name": "Jude Bellingham", "value": "171 Spiele", "sort_value": 171},
+            {"name": "Gianluigi Donnarumma", "value": "153 Spiele", "sort_value": 153},
+            {"name": "Cesc Fàbregas", "value": "131 Spiele", "sort_value": 131},
+            {"name": "Wayne Rooney", "value": "126 Spiele", "sort_value": 126},
+            {"name": "Pedri", "value": "122 Spiele", "sort_value": 122},
+            {"name": "Eden Hazard", "value": "119 Spiele", "sort_value": 119},
+            {"name": "Kylian Mbappé", "value": "116 Spiele", "sort_value": 116},
+            {"name": "Gavi", "value": "111 Spiele", "sort_value": 111},
+            {"name": "Raheem Sterling", "value": "104 Spiele", "sort_value": 104},
+            {"name": "Cristiano Ronaldo", "value": "94 Spiele", "sort_value": 94},
+            {"name": "Lionel Messi", "value": "78 Spiele", "sort_value": 78},
+            {"name": "Erling Haaland", "value": "73 Spiele", "sort_value": 73}
+        ]
+    },
+    {
+        "question": "Welcher dieser Vereine hat in der ewigen Tabelle der UEFA Champions League (inkl. Europapokal der Landesmeister) historisch die meisten Punkte geholt? (Konvertiert auf die 3-Punkte-Regel)",
+        "data": [
+            {"name": "Real Madrid", "value": "952 Punkte", "sort_value": 952},
+            {"name": "FC Bayern München", "value": "774 Punkte", "sort_value": 774},
+            {"name": "FC Barcelona", "value": "670 Punkte", "sort_value": 670},
+            {"name": "Manchester United", "value": "542 Punkte", "sort_value": 542},
+            {"name": "Juventus Turin", "value": "528 Punkte", "sort_value": 528},
+            {"name": "FC Liverpool", "value": "448 Punkte", "sort_value": 448},
+            {"name": "AC Mailand", "value": "381 Punkte", "sort_value": 381},
+            {"name": "FC Porto", "value": "315 Punkte", "sort_value": 315},
+            {"name": "FC Chelsea", "value": "312 Punkte", "sort_value": 312},
+            {"name": "Arsenal FC", "value": "306 Punkte", "sort_value": 306},
+            {"name": "Benfica Lissabon", "value": "271 Punkte", "sort_value": 271},
+            {"name": "Paris Saint-Germain", "value": "211 Punkte", "sort_value": 211}
+        ]
+    },
+    {
+        "question": "Welcher dieser Spieler hat in seiner Karriere die meisten 'Man of the Match' (MotM) Auszeichnungen erhalten? (Messi und Ronaldo wurden als Top 2 weggelassen!)",
+        "data": [
+            {"name": "Eden Hazard", "value": "100 MotM", "sort_value": 100},
+            {"name": "Zlatan Ibrahimović", "value": "98 MotM", "sort_value": 98},
+            {"name": "Neymar Jr.", "value": "91 MotM", "sort_value": 91},
+            {"name": "Robert Lewandowski", "value": "88 MotM", "sort_value": 88},
+            {"name": "Harry Kane", "value": "83 MotM", "sort_value": 83},
+            {"name": "Kevin De Bruyne", "value": "79 MotM", "sort_value": 79},
+            {"name": "Antoine Griezmann", "value": "75 MotM", "sort_value": 75},
+            {"name": "Luis Suárez", "value": "72 MotM", "sort_value": 72},
+            {"name": "Mohamed Salah", "value": "70 MotM", "sort_value": 70},
+            {"name": "Karim Benzema", "value": "64 MotM", "sort_value": 64},
+            {"name": "Kylian Mbappé", "value": "58 MotM", "sort_value": 58},
+            {"name": "Erling Haaland", "value": "42 MotM", "sort_value": 42}
+        ]
+    },
+    {
+        "question": "Welcher dieser Toptorjäger hat seit dem 1. Januar 2000 wettbewerbsübergreifend die meisten offiziellen Profi-Tore erzielt?",
+        "data": [
+            {"name": "Cristiano Ronaldo", "value": "893 Tore", "sort_value": 893},
+            {"name": "Lionel Messi", "value": "835 Tore", "sort_value": 835},
+            {"name": "Robert Lewandowski", "value": "664 Tore", "sort_value": 664},
+            {"name": "Zlatan Ibrahimović", "value": "573 Tore", "sort_value": 573},
+            {"name": "Luis Suárez", "value": "565 Tore", "sort_value": 565},
+            {"name": "Karim Benzema", "value": "474 Tore", "sort_value": 474},
+            {"name": "Edinson Cavani", "value": "445 Tore", "sort_value": 445},
+            {"name": "Neymar Jr.", "value": "439 Tore", "sort_value": 439},
+            {"name": "Harry Kane", "value": "412 Tore", "sort_value": 412},
+            {"name": "Kylian Mbappé", "value": "332 Tore", "sort_value": 332},
+            {"name": "Erling Haaland", "value": "260 Tore", "sort_value": 260},
+            {"name": "Mohamed Salah", "value": "254 Tore", "sort_value": 254}
+        ]
+    },
+    {
+        "question": "Welcher dieser Elite-Akteure verzeichnet die statistisch meisten direkt gemessenen Torvorlagen (Assists) in seiner gesamten Profikarriere?",
+        "data": [
+            {"name": "Lionel Messi", "value": "362 Assists", "sort_value": 362},
+            {"name": "Thomas Müller", "value": "304 Assists", "sort_value": 304},
+            {"name": "Luis Suárez", "value": "298 Assists", "sort_value": 298},
+            {"name": "Kevin De Bruyne", "value": "287 Assists", "sort_value": 287},
+            {"name": "Ángel Di María", "value": "262 Assists", "sort_value": 262},
+            {"name": "Neymar Jr.", "value": "258 Assists", "sort_value": 258},
+            {"name": "Cristiano Ronaldo", "value": "251 Assists", "sort_value": 251},
+            {"name": "Mesut Özil", "value": "240 Assists", "sort_value": 240},
+            {"name": "Cesc Fàbregas", "value": "234 Assists", "sort_value": 234},
+            {"name": "Zlatan Ibrahimović", "value": "202 Assists", "sort_value": 202},
+            {"name": "Karim Benzema", "value": "196 Assists", "sort_value": 196},
+            {"name": "Kylian Mbappé", "value": "152 Assists", "sort_value": 152}
+        ]
+    }
+])

@@ -81,28 +81,31 @@ if st.session_state.phase == "setup":
     col_p, col_q = st.columns(2)
     
     with col_p:
-        st.subheader("👥 Spieler")
-        default_crew = ["TroX", "Connor", "Ritze", "Jojo"]
-        num_players = st.number_input("Anzahl der Spieler", min_value=1, max_value=8, value=4)
-        player_names = []
-        for i in range(num_players):
-            def_name = default_crew[i] if i < len(default_crew) else f"Spieler {i+1}"
-            name = st.text_input(f"Name Spieler {i+1}", value=def_name)
-            player_names.append(name)
+        st.subheader("👥 Spieler auswählen")
+        crew_options = ["TroX", "Connor", "Ritze", "Jojo"]
+        # Dropdown für die Stammcrew
+        selected_crew = st.multiselect("Wähle Spieler aus der Crew:", options=crew_options, default=[])
+        
+        # Textfeld für optionale Zusatzspieler
+        custom_players_str = st.text_input("Zusätzliche Spieler hinzufügen (mit Komma trennen):", "")
+        custom_players = [name.strip() for name in custom_players_str.split(",") if name.strip()]
+        
+        player_names = selected_crew + custom_players
+        
+        if player_names:
+            st.success(f"Bereit zu spielen: {', '.join(player_names)}")
             
     with col_q:
         st.subheader("📚 Kategorie")
         category = st.selectbox("Wähle eine Kategorie:", list(CATEGORIES.keys()))
         q_list = CATEGORIES[category]
         
-        # Falls die Kategorie wechselt, wählen wir automatisch eine zufällige Frage aus
         if st.session_state.last_category != category:
             st.session_state.q_idx = random.randint(0, len(q_list) - 1)
             st.session_state.last_category = category
 
         st.info(f"🎲 Aktuelle Zufallsfrage: **\"{q_list[st.session_state.q_idx]['question']}\"**")
         
-        # Option zum manuellen Wechseln der Frage
         manual_change = st.checkbox("🔍 Frage manuell aus Katalog wählen")
         if manual_change:
             q_titles = [q["question"] for q in q_list]
@@ -110,7 +113,9 @@ if st.session_state.phase == "setup":
             st.session_state.q_idx = q_titles.index(selected_q_text)
             
     st.write("---")
-    if st.button("🚀 Spiel starten", use_container_width=True):
+    
+    # Start-Button ist nur aktiv, wenn mindestens ein Spieler ausgewählt wurde
+    if st.button("🚀 Spiel starten", use_container_width=True, disabled=(len(player_names) == 0)):
         st.session_state.players = [{"name": n, "score": 0, "active": True} for n in player_names]
         st.session_state.current_player_idx = 0
         
@@ -188,7 +193,6 @@ elif st.session_state.phase in ["playing", "game_over"]:
             col_btn = st.columns([1, 2, 1])[1]
             with col_btn:
                 if st.button("🔄 Neues Spiel / Kategorie wechseln", use_container_width=True):
-                    # Bei Neustart wird der Kategoriewechsel-Trigger zurückgesetzt
                     st.session_state.last_category = ""
                     st.session_state.phase = "setup"
                     st.rerun()

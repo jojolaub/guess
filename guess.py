@@ -1,72 +1,42 @@
 import streamlit as st
 import random
-# Wir importieren die Datenbank aus der anderen Datei
 from fragen import CATEGORIES
 
-# --- 1. SEITEN-KONFIGURATION (Hier kannst du Name und Icon ändern) ---
+# --- SEITEN-KONFIGURATION ---
 APP_NAME = "Quiz Royale"
 st.set_page_config(page_title=APP_NAME, page_icon="👑", layout="wide")
 
-# --- 2. FANCY CSS STYLING ---
 st.markdown("""
     <style>
-    /* Styling für die aktiven Buttons */
     div.stButton > button {
         background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
-        color: white;
-        border: none;
-        border-radius: 12px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        transition: all 0.3s ease;
-        height: 110px;
-        font-size: 16px;
-        font-weight: bold;
-        white-space: normal;
-        word-wrap: break-word;
+        color: white; border: none; border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: all 0.3s ease;
+        height: 110px; font-size: 16px; font-weight: bold;
+        white-space: normal; word-wrap: break-word;
     }
-    
-    /* Hover-Effekt (Button hebt sich an) */
     div.stButton > button:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-        border: 1px solid #4CAF50;
+        transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.3); border: 1px solid #4CAF50;
     }
-    
-    /* Styling für DEAKTIVIERTE (bereits geklickte) Buttons */
     div.stButton > button:disabled {
-        background: #f0f2f6 !important;
-        color: #555 !important;
-        transform: none !important;
-        box-shadow: inset 0 2px 5px rgba(0,0,0,0.1) !important;
+        background: #f0f2f6 !important; color: #555 !important;
+        transform: none !important; box-shadow: inset 0 2px 5px rgba(0,0,0,0.1) !important;
         border: 1px solid #ddd !important;
-    }
-
-    /* Großer Neues-Spiel-Button */
-    .restart-btn {
-        text-align: center;
-        margin-top: 30px;
-        padding: 20px;
     }
     </style>
 """, unsafe_allow_html=True)
 
-# --- 3. STATE MANAGEMENT INITIALISIERUNG ---
-if "phase" not in st.session_state:
-    st.session_state.phase = "setup"
-if "players" not in st.session_state:
-    st.session_state.players = [] 
-if "current_player_idx" not in st.session_state:
-    st.session_state.current_player_idx = 0
-if "board" not in st.session_state:
-    st.session_state.board = []
-if "available_options" not in st.session_state:
-    st.session_state.available_options = []
+# --- STATE MANAGEMENT ---
+if "phase" not in st.session_state: st.session_state.phase = "setup"
+if "players" not in st.session_state: st.session_state.players = [] 
+if "current_player_idx" not in st.session_state: st.session_state.current_player_idx = 0
+if "board" not in st.session_state: st.session_state.board = []
+if "available_options" not in st.session_state: st.session_state.available_options = []
+if "q_idx" not in st.session_state: st.session_state.q_idx = 0
 
-# --- 4. SPIELLOGIK FUNKTIONEN ---
+# --- SPIELLOGIK ---
 def next_turn():
     active_players = [p for p in st.session_state.players if p["active"]]
-    
-    # Spiel vorbei?
     if not active_players or len(st.session_state.available_options) == 0:
         st.session_state.phase = "game_over"
         return
@@ -80,17 +50,22 @@ def handle_click(board_index):
     clicked_item = st.session_state.board[board_index]
     current_player = st.session_state.players[st.session_state.current_player_idx]
     
-    current_pool = st.session_state.available_options
-    dynamic_index = current_pool.index(clicked_item["name"])
+    # Mathematische Berechnung der Extremwerte für die Gleichstand-Logik
+    current_pool_items = [item for item in st.session_state.board if item["name"] in st.session_state.available_options]
+    pool_sort_values = [item["sort_value"] for item in current_pool_items]
     
-    if dynamic_index == 0:
+    killer_val = max(pool_sort_values) # Der aktuell stärkste Wert
+    ziel_val = min(pool_sort_values)   # Der aktuell schwächste Wert
+    clicked_val = clicked_item["sort_value"]
+    
+    if clicked_val == killer_val:
         points = 0
         current_player["active"] = False
-        status_text = "💥 AUSGESCHIEDEN (Platz 1)"
-    elif dynamic_index == len(current_pool) - 1:
+        status_text = "💥 AUSGESCHIEDEN (Killer-Platz)"
+    elif clicked_val == ziel_val:
         points = 3
         current_player["score"] += points
-        status_text = "🏆 +3 PUNKTE (Letzter Platz)"
+        status_text = "🏆 +3 PUNKTE (Sicheres Ziel)"
     else:
         points = 1
         current_player["score"] += points
@@ -102,64 +77,88 @@ def handle_click(board_index):
     st.session_state.available_options.remove(clicked_item["name"])
     next_turn()
 
-# --- 5. UI: SETUP-PHASE ---
+# --- UI: SETUP-PHASE ---
 if st.session_state.phase == "setup":
     st.title(f"👑 {APP_NAME} - Setup")
-    st.markdown("Wer findet die schwächste Antwort, ohne die stärkste zu berühren?")
     
-    col1, col2 = st.columns(2)
-    with col1:
-        num_players = st.number_input("Anzahl der Spieler", min_value=1, max_value=8, value=2)
+    col_p, col_q = st.columns(2)
+    
+    with col_p:
+        st.subheader("👥 Spieler")
+        # Standard-Namen vorausgewählt
+        default_crew = ["TroX", "Connor", "Ritze", "Jojo"]
+        num_players = st.number_input("Anzahl der Spieler", min_value=1, max_value=8, value=4)
         player_names = []
         for i in range(num_players):
-            name = st.text_input(f"Name Spieler {i+1}", value=f"Spieler {i+1}")
+            def_name = default_crew[i] if i < len(default_crew) else f"Spieler {i+1}"
+            name = st.text_input(f"Name Spieler {i+1}", value=def_name)
             player_names.append(name)
             
-    with col2:
-        # Hier werden die Kategorien aus fragen.py geladen
-        category = st.selectbox("Kategorie wählen", list(CATEGORIES.keys()))
+    with col_q:
+        st.subheader("📚 Kategorie & Frage")
+        category = st.selectbox("1. Kategorie wählen", list(CATEGORIES.keys()))
         
+        q_list = CATEGORIES[category]
+        q_titles = [q["question"] for q in q_list]
+        
+        # Sicherheits-Check, falls die Kategorie gewechselt wird
+        if st.session_state.q_idx >= len(q_titles):
+            st.session_state.q_idx = 0
+            
+        selected_q_text = st.selectbox("2. Frage wählen", q_titles, index=st.session_state.q_idx)
+        st.session_state.q_idx = q_titles.index(selected_q_text)
+        
+        if st.button("🎲 Zufällige Frage aus Kategorie wählen"):
+            st.session_state.q_idx = random.randint(0, len(q_list)-1)
+            st.rerun()
+            
     st.write("---")
     if st.button("🚀 Spiel starten", use_container_width=True):
-        st.session_state.players = [{"name": name, "score": 0, "active": True} for name in player_names]
+        st.session_state.players = [{"name": n, "score": 0, "active": True} for n in player_names]
         st.session_state.current_player_idx = 0
         
-        raw_data = CATEGORIES[category]["data"]
+        raw_data = sorted(CATEGORIES[category][st.session_state.q_idx]["data"], key=lambda x: x["sort_value"], reverse=True)
+        
+        # Ränge berechnen inkl. Gleichstände (Ties)
         board_data = []
         available_names = []
+        current_rank = 1
         for i, item in enumerate(raw_data):
+            if i > 0 and item["sort_value"] == raw_data[i-1]["sort_value"]:
+                rank_to_assign = board_data[-1]["original_rank"]
+            else:
+                rank_to_assign = current_rank
+            
             board_data.append({
                 "name": item["name"],
                 "value": item["value"],
-                "original_rank": i + 1,
+                "sort_value": item["sort_value"],
+                "original_rank": rank_to_assign,
                 "clicked_by": None,
                 "status_text": ""
             })
             available_names.append(item["name"])
+            current_rank += 1
             
         random.shuffle(board_data)
         st.session_state.board = board_data
         st.session_state.available_options = available_names
-        st.session_state.current_question = CATEGORIES[category]["question"]
+        st.session_state.current_question = CATEGORIES[category][st.session_state.q_idx]["question"]
         st.session_state.phase = "playing"
         st.rerun()
 
-# --- 6. UI: SPIEL- & END-PHASE ---
+# --- UI: SPIEL- & END-PHASE ---
 elif st.session_state.phase in ["playing", "game_over"]:
     st.title(st.session_state.current_question)
     
     main_col, sidebar_col = st.columns([3, 1])
     
-    # SEITENLEISTE: Rangliste
     with sidebar_col:
         st.markdown("### 📊 Rangliste")
-        # Sortiere Spieler nach Punkten für die Anzeige (optional, sieht aber besser aus)
         sorted_players = sorted(st.session_state.players, key=lambda x: x["score"], reverse=True)
         
         for player in sorted_players:
-            # Finde den originalen Index, um zu wissen, wer am Zug ist
             original_idx = st.session_state.players.index(player)
-            
             if not player["active"]:
                 st.markdown(f"~~{player['name']}: {player['score']} Pkt~~ 💀")
             elif original_idx == st.session_state.current_player_idx and st.session_state.phase == "playing":
@@ -167,7 +166,6 @@ elif st.session_state.phase in ["playing", "game_over"]:
             else:
                 st.markdown(f"{player['name']}: {player['score']} Pkt")
                 
-    # HAUPTBEREICH: 4x3 Grid
     with main_col:
         for row in range(3):
             cols = st.columns(4)
@@ -179,28 +177,20 @@ elif st.session_state.phase in ["playing", "game_over"]:
                     if item["clicked_by"] is not None:
                         st.button(
                             f"{item['name']}\n\n{item['value']} (Platz {item['original_rank']})\n\n👤 {item['clicked_by']}\n{item['status_text']}",
-                            key=f"btn_disabled_{idx}",
-                            disabled=True,
-                            use_container_width=True
+                            key=f"btn_disabled_{idx}", disabled=True, use_container_width=True
                         )
                     else:
                         st.button(
-                            item['name'],
-                            key=f"btn_active_{idx}",
-                            on_click=handle_click,
-                            args=(idx,),
-                            disabled=(st.session_state.phase == "game_over"),
-                            use_container_width=True
+                            item['name'], key=f"btn_active_{idx}", on_click=handle_click, args=(idx,),
+                            disabled=(st.session_state.phase == "game_over"), use_container_width=True
                         )
         
-        # SPIELENDE: Fetter Restart-Button unten in der Mitte
         if st.session_state.phase == "game_over":
             st.markdown("---")
-            st.balloons() # Ein kleiner Konfetti-Effekt für den Sieger
+            st.balloons()
             st.markdown("<h2 style='text-align: center; color: #4CAF50;'>🏁 Spiel beendet!</h2>", unsafe_allow_html=True)
-            
-            col_space1, col_btn, col_space2 = st.columns([1, 2, 1])
+            col_btn = st.columns([1, 2, 1])[1]
             with col_btn:
-                if st.button("🔄 Nächste Runde / Neues Spiel", use_container_width=True):
+                if st.button("🔄 Neues Spiel / Kategorie wechseln", use_container_width=True):
                     st.session_state.phase = "setup"
                     st.rerun()

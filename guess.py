@@ -1,6 +1,8 @@
 import streamlit as st
 import random
-from fragen import CATEGORIES
+from fragen import CATEGORIES  
+
+
 
 # --- SEITEN-KONFIGURATION ---
 APP_NAME = "Quiz Royale"

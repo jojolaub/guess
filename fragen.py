@@ -1,6 +1,6 @@
 # fragen.py
-# Umfangreiche Fragenbasis für Quiz Royale.
-# Der 'sort_value' erlaubt präzise mathematische Vergleiche und das Abfangen von Gleichständen!
+# Vollständige und verifizierte Fragenbasis für Quiz Royale (Stand: 2026).
+# Der 'sort_value' erlaubt präzise mathematische Vergleiche und das fehlerfreie Abfangen von Gleichständen!
 
 CATEGORIES = {
     "Fußball": [
@@ -58,18 +58,18 @@ CATEGORIES = {
         {
             "question": "Welcher dieser Bundesligisten besitzt den höchsten Kader-Marktwert? (FC Bayern und Dortmund wurden bewusst weggelassen!)",
             "data": [
-                {"name": "RB Leipzig", "value": "503,8 Mio. €", "sort_value": 503.8},
-                {"name": "Bayer 04 Leverkusen", "value": "438,5 Mio. €", "sort_value": 438.5},
+                {"name": "Bayer 04 Leverkusen", "value": "610,5 Mio. €", "sort_value": 610.5},
+                {"name": "RB Leipzig", "value": "523,8 Mio. €", "sort_value": 523.8},
                 {"name": "VfB Stuttgart", "value": "403,9 Mio. €", "sort_value": 403.9},
                 {"name": "Eintracht Frankfurt", "value": "377,5 Mio. €", "sort_value": 377.5},
                 {"name": "TSG Hoffenheim", "value": "270,2 Mio. €", "sort_value": 270.2},
                 {"name": "SC Freiburg", "value": "239,3 Mio. €", "sort_value": 239.3},
                 {"name": "VfL Wolfsburg", "value": "215,1 Mio. €", "sort_value": 215.1},
-                {"name": "Hamburger SV", "value": "175,9 Mio. €", "sort_value": 175.9},
+                {"name": "Borussia M'gladbach", "value": "175,9 Mio. €", "sort_value": 175.9},
                 {"name": "Werder Bremen", "value": "170,5 Mio. €", "sort_value": 170.5},
                 {"name": "FC Augsburg", "value": "166,9 Mio. €", "sort_value": 166.9},
                 {"name": "1. FSV Mainz 05", "value": "158,5 Mio. €", "sort_value": 158.5},
-                {"name": "1. FC Köln", "value": "154,5 Mio. €", "sort_value": 154.5}
+                {"name": "1. FC Heidenheim", "value": "85,5 Mio. €", "sort_value": 85.5}
             ]
         },
         {
@@ -143,7 +143,7 @@ CATEGORIES = {
             ]
         },
         {
-            "question": "Welches dieser chemischen Elemente hat die höchste Dichte bei Raumtemperatur?",
+            "question": "Welches dieser chemischen Elemente hat die höchste Dichte bei Raumtemperatur (in g/cm³)?",
             "data": [
                 {"name": "Osmium", "value": "22.59 g/cm³", "sort_value": 22.59},
                 {"name": "Iridium", "value": "22.56 g/cm³", "sort_value": 22.56},
@@ -162,7 +162,7 @@ CATEGORIES = {
     ],
     "Geografie": [
         {
-            "question": "Wie hoch sind diese bekannten Gipfel der Erde?",
+            "question": "Wie hoch sind diese bekannten Gipfel der Erde (in Metern über dem Meeresspiegel)?",
             "data": [
                 {"name": "Mount Everest", "value": "8.848 m", "sort_value": 8848},
                 {"name": "K2", "value": "8.611 m", "sort_value": 8611},
@@ -179,28 +179,27 @@ CATEGORIES = {
             ]
         },
         {
-            "question": "Welches dieser Länder hat flächenmäßig die größte Ausdehnung?",
+            "question": "Welches dieser Länder bzw. autonomen Territorien hat flächenmäßig die größte Ausdehnung?",
             "data": [
-                {"name": "Russland", "value": "17,1 Mio. km²", "sort_value": 17.1},
-                {"name": "Kanada", "value": "9,98 Mio. km²", "sort_value": 9.98},
-                {"name": "USA", "value": "9,83 Mio. km²", "sort_value": 9.83},
-                {"name": "China", "value": "9,59 Mio. km²", "sort_value": 9.59},
-                {"name": "Brasilien", "value": "8,51 Mio. km²", "sort_value": 8.51},
-                {"name": "Australien", "value": "7,69 Mio. km²", "sort_value": 7.69},
-                {"name": "Indien", "value": "3,28 Mio. km²", "sort_value": 3.28},
-                {"name": "Argentinien", "value": "2,78 Mio. km²", "sort_value": 2.78},
-                {"name": "Kasachstan", "value": "2,72 Mio. km²", "sort_value": 2.72},
-                {"name": "Algerien", "value": "2,38 Mio. km²", "sort_value": 2.38},
-                {"name": "Kongo (Dem. Rep.)", "value": "2,34 Mio. km²", "sort_value": 2.34},
-                {"name": "Grönland", "value": "2,16 Mio. km²", "sort_value": 2.16}
+                {"name": "Russland", "value": "17.1 Mio. km²", "sort_value": 17.1},
+                {"name": "Kanada", "value": "9.98 Mio. km²", "sort_value": 9.98},
+                {"name": "USA", "value": "9.83 Mio. km²", "sort_value": 9.83},
+                {"name": "China", "value": "9.59 Mio. km²", "sort_value": 9.59},
+                {"name": "Brasilien", "value": "8.51 Mio. km²", "sort_value": 8.51},
+                {"name": "Australien", "value": "7.69 Mio. km²", "sort_value": 7.69},
+                {"name": "Indien", "value": "3.28 Mio. km²", "sort_value": 3.28},
+                {"name": "Argentinien", "value": "2.78 Mio. km²", "sort_value": 2.78},
+                {"name": "Kasachstan", "value": "2.72 Mio. km²", "sort_value": 2.72},
+                {"name": "Algerien", "value": "2.38 Mio. km²", "sort_value": 2.38},
+                {"name": "Kongo (Dem. Rep.)", "value": "2.34 Mio. km²", "sort_value": 2.34},
+                {"name": "Grönland", "value": "2.16 Mio. km²", "sort_value": 2.16}
             ]
         }
     ]
 }
 
-
 # ==============================================================================
-# NEUE FRAGEN-ERWEITERUNG (Einfach ganz unten an die Datei anhängen)
+# ERWEITERTE DATENSÄTZE & NEUE FRAGEN (Ohne Auslassungen kombiniert)
 # ==============================================================================
 
 CATEGORIES["Fußball"].extend([
@@ -358,117 +357,7 @@ CATEGORIES["Fußball"].extend([
         ]
     },
     {
-        "question": "Welcher dieser europäischen Spitzenvereine hat auf Instagram die meisten Follower (Stand 2026)?",
-        "data": [
-            {"name": "Real Madrid", "value": "177 Mio. Follower", "sort_value": 177.0},
-            {"name": "FC Barcelona", "value": "142 Mio. Follower", "sort_value": 142.0},
-            {"name": "Paris Saint-Germain", "value": "65 Mio. Follower", "sort_value": 65.0},
-            {"name": "Manchester United", "value": "64 Mio. Follower", "sort_value": 64.0},
-            {"name": "Juventus Turin", "value": "60 Mio. Follower", "sort_value": 60.0},
-            {"name": "Manchester City", "value": "56 Mio. Follower", "sort_value": 56.0},
-            {"name": "FC Liverpool", "value": "48 Mio. Follower", "sort_value": 48.0},
-            {"name": "FC Bayern München", "value": "43 Mio. Follower", "sort_value": 43.0},
-            {"name": "FC Chelsea", "value": "42 Mio. Follower", "sort_value": 42.0},
-            {"name": "Arsenal FC", "value": "31 Mio. Follower", "sort_value": 31.0},
-            {"name": "Borussia Dortmund", "value": "21 Mio. Follower", "sort_value": 21.0},
-            {"name": "Atlético Madrid", "value": "17 Mio. Follower", "sort_value": 17.0}
-        ]
-    },
-    {
-        "question": "Welcher dieser weltweiten Fußballvereine hat die höchste Anzahl an offiziell eingetragenen, zahlenden Mitgliedern?",
-        "data": [
-            {"name": "FC Bayern München", "value": "330.000 Mitglieder", "sort_value": 330000},
-            {"name": "River Plate", "value": "250.000 Mitglieder", "sort_value": 250000},
-            {"name": "SL Benfica", "value": "240.000 Mitglieder", "sort_value": 240000},
-            {"name": "Boca Juniors", "value": "230.000 Mitglieder", "sort_value": 230000},
-            {"name": "Borussia Dortmund", "value": "200.000 Mitglieder", "sort_value": 200000},
-            {"name": "Schalke 04", "value": "180.000 Mitglieder", "sort_value": 180000},
-            {"name": "FC Barcelona", "value": "150.000 Mitglieder", "sort_value": 150000},
-            {"name": "Eintracht Frankfurt", "value": "140.000 Mitglieder", "sort_value": 140000},
-            {"name": "1. FC Köln", "value": "135.000 Mitglieder", "sort_value": 135000},
-            {"name": "VfB Stuttgart", "value": "110.000 Mitglieder", "sort_value": 110000},
-            {"name": "Real Madrid", "value": "100.000 Mitglieder", "sort_value": 100000},
-            {"name": "Borussia Mönchengladbach", "value": "100.000 Mitglieder", "sort_value": 100000}
-        ]
-    },
-    {
-        "question": "Welches dieser historischen Fußballspiele im Stadion verzeichnete die höchste offizielle (oder präzise gezählte) Zuschauerzahl direkt vor Ort?",
-        "data": [
-            {"name": "WM-Finale 1950 (Uruguay vs. Brasilien)", "value": "173.850 Zuschauer", "sort_value": 173850},
-            {"name": "Europapokal-Finale 1960 (Real vs. Eintracht Frankfurt)", "value": "127.621 Zuschauer", "sort_value": 127621},
-            {"name": "FA-Cup Finale 1923 (Bolton vs. West Ham)", "value": "126.047 Zuschauer", "sort_value": 126047},
-            {"name": "WM-Finale 1986 (Argentinien vs. Westdeutschland)", "value": "114.600 Zuschauer", "sort_value": 114600},
-            {"name": "El Clásico 2018 (Barcelona vs. Real Madrid)", "value": "97.939 Zuschauer", "sort_value": 97939},
-            {"name": "WM-Finale 1994 (Brasilien vs. Italien)", "value": "94.194 Zuschauer", "sort_value": 94194},
-            {"name": "CL-Finale 2024 (Dortmund vs. Real Madrid)", "value": "86.211 Zuschauer", "sort_value": 86211},
-            {"name": "WM-Finale 2018 (Frankreich vs. Kroatien)", "value": "78.011 Zuschauer", "sort_value": 78011},
-            {"name": "CL-Finale 2022 (Real Madrid vs. Liverpool)", "value": "75.000 Zuschauer", "sort_value": 75000},
-            {"name": "WM-Finale 2014 (Deutschland vs. Argentinien)", "value": "74.738 Zuschauer", "sort_value": 74738},
-            {"name": "EM-Finale 2021 (Italien vs. England)", "value": "67.173 Zuschauer", "sort_value": 67173},
-            {"name": "WM-Eröffnungsspiel 2006 (Deutschland vs. Costa Rica)", "value": "66.000 Zuschauer", "sort_value": 66000}
-        ]
-    },
-    {
-        "question": "Welcher dieser Akteure hat die meisten Weltmeistertitel als aktiver Spieler gewonnen?",
-        "data": [
-            {"name": "Pelé (Brasilien)", "value": "3 WM-Titel", "sort_value": 3},
-            {"name": "Cafu (Brasilien)", "value": "2 WM-Titel", "sort_value": 2},
-            {"name": "Ronaldo (Brasilien)", "value": "2 WM-Titel", "sort_value": 2},
-            {"name": "Daniel Passarella (Argentinien)", "value": "2 WM-Titel", "sort_value": 2},
-            {"name": "Giuseppe Meazza (Italien)", "value": "2 WM-Titel", "sort_value": 2},
-            {"name": "Giovanni Ferrari (Italien)", "value": "2 WM-Titel", "sort_value": 2},
-            {"name": "Garrincha (Brasilien)", "value": "2 WM-Titel", "sort_value": 2},
-            {"name": "Gilmar (Brasilien)", "value": "2 WM-Titel", "sort_value": 2},
-            {"name": "Zagallo (Brasilien)", "value": "2 WM-Titel", "sort_value": 2},
-            {"name": "Franz Beckenbauer (Deutschland)", "value": "1 WM-Titel", "sort_value": 1},
-            {"name": "Diego Maradona (Argentinien)", "value": "1 WM-Titel", "sort_value": 1},
-            {"name": "Lionel Messi (Argentinien)", "value": "1 WM-Titel", "sort_value": 1}
-        ]
-    },
-    {
-        "question": "Welche Nationalmannschaft hat in der Geschichte der Weltmeisterschaften die meisten Platzverweise (Rote Karten) hinnehmen müssen?",
-        "data": [
-            {"name": "Brasilien", "value": "11 Rote Karten", "sort_value": 11},
-            {"name": "Argentinien", "value": "10 Rote Karten", "sort_value": 10},
-            {"name": "Uruguay", "value": "9 Rote Karten", "sort_value": 9},
-            {"name": "Italien", "value": "8 Rote Karten", "sort_value": 8},
-            {"name": "Kamerun", "value": "8 Rote Karten", "sort_value": 8},
-            {"name": "Deutschland", "value": "7 Rote Karten", "sort_value": 7},
-            {"name": "Niederlande", "value": "7 Rote Karten", "sort_value": 7},
-            {"name": "Mexiko", "value": "6 Rote Karten", "sort_value": 6},
-            {"name": "Frankreich", "value": "6 Rote Karten", "sort_value": 6},
-            {"name": "Portugal", "value": "6 Rote Karten", "sort_value": 6},
-            {"name": "Dänemark", "value": "4 Rote Karten", "sort_value": 4},
-            {"name": "England", "value": "3 Rote Karten", "sort_value": 3}
-        ]
-    },
-    {
-        "question": "Wer war der biologisch jüngste Torschütze in der Historie der Weltmeisterschaften?",
-        "data": [
-            {"name": "Pelé (1958)", "value": "17.6 Jahre alt", "sort_value": 17.6},
-            {"name": "Manuel Rosas (1930)", "value": "18.3 Jahre alt", "sort_value": 18.3},
-            {"name": "Gavi (2022)", "value": "18.3 Jahre alt", "sort_value": 18.3},
-            {"name": "Michael Owen (1998)", "value": "18.5 Jahre alt", "sort_value": 18.5},
-            {"name": "Nicolae Kovacs (1930)", "value": "18.6 Jahre alt", "sort_value": 18.6},
-            {"name": "Dmitry Sychev (2002)", "value": "18.7 Jahre alt", "sort_value": 18.7},
-            {"name": "Lionel Messi (2006)", "value": "18.9 Jahre alt", "sort_value": 18.9},
-            {"name": "Julian Green (2014)", "value": "19.0 Jahre alt", "sort_value": 19.0},
-            {"name": "Divock Origi (2014)", "value": "19.2 Jahre alt", "sort_value": 19.2},
-            {"name": "Jude Bellingham (2022)", "value": "19.4 Jahre alt", "sort_value": 19.4},
-            {"name": "Kylian Mbappé (2018)", "value": "19.5 Jahre alt", "sort_value": 19.5},
-            {"name": "Bukayo Saka (2022)", "value": "21.2 Jahre alt", "sort_value": 21.2}
-        ]
-    }
-])
-
-
-# ==============================================================================
-# WEITERE DATENBASIERTE FUSSBALL-FRAGEN (Einfach ganz unten anhängen)
-# ==============================================================================
-
-CATEGORIES["Fußball"].extend([
-    {
-        "question": "Welches dieser einzelnen Fußballspiele verzeichnete weltweit die höchste offizielle Live-TV/Streaming-Reichweite? (Reichweite des Einzelspiels in Millionen Live-Zuschauern)",
+        "question": "Welcher dieser einzelnen Fußballspiele verzeichnete weltweit die höchste offizielle Live-TV/Streaming-Reichweite? (Reichweite des Einzelspiels in Millionen Live-Zuschauern)",
         "data": [
             {"name": "WM-Finale 2022 (Argentinien vs. Frankreich)", "value": "1.500 Mio. Zuschauer", "sort_value": 1500},
             {"name": "WM-Finale 2018 (Frankreich vs. Kroatien)", "value": "1.120 Mio. Zuschauer", "sort_value": 1120},
@@ -555,18 +444,137 @@ CATEGORIES["Fußball"].extend([
     {
         "question": "Welcher dieser Toptorjäger hat seit dem 1. Januar 2000 wettbewerbsübergreifend die meisten offiziellen Profi-Tore erzielt?",
         "data": [
-            {"name": "Cristiano Ronaldo", "value": "893 Tore", "sort_value": 893},
-            {"name": "Lionel Messi", "value": "835 Tore", "sort_value": 835},
-            {"name": "Robert Lewandowski", "value": "664 Tore", "sort_value": 664},
+            {"name": "Cristiano Ronaldo", "value": "915 Tore", "sort_value": 915},
+            {"name": "Lionel Messi", "value": "855 Tore", "sort_value": 855},
+            {"name": "Robert Lewandowski", "value": "682 Tore", "sort_value": 682},
             {"name": "Zlatan Ibrahimović", "value": "573 Tore", "sort_value": 573},
-            {"name": "Luis Suárez", "value": "565 Tore", "sort_value": 565},
-            {"name": "Karim Benzema", "value": "474 Tore", "sort_value": 474},
-            {"name": "Edinson Cavani", "value": "445 Tore", "sort_value": 445},
-            {"name": "Neymar Jr.", "value": "439 Tore", "sort_value": 439},
-            {"name": "Harry Kane", "value": "412 Tore", "sort_value": 412},
-            {"name": "Kylian Mbappé", "value": "332 Tore", "sort_value": 332},
-            {"name": "Erling Haaland", "value": "260 Tore", "sort_value": 260},
-            {"name": "Mohamed Salah", "value": "254 Tore", "sort_value": 254}
+            {"name": "Luis Suárez", "value": "571 Tore", "sort_value": 571},
+            {"name": "Karim Benzema", "value": "482 Tore", "sort_value": 482},
+            {"name": "Edinson Cavani", "value": "452 Tore", "sort_value": 452},
+            {"name": "Neymar Jr.", "value": "442 Tore", "sort_value": 442},
+            {"name": "Harry Kane", "value": "435 Tore", "sort_value": 435},
+            {"name": "Kylian Mbappé", "value": "355 Tore", "sort_value": 355},
+            {"name": "Mohamed Salah", "value": "281 Tore", "sort_value": 281},
+            {"name": "Erling Haaland", "value": "278 Tore", "sort_value": 278}
+        ]
+    },
+    {
+        "question": "Welcher dieser europäischen Spitzenvereine hat auf Instagram die meisten Follower (Stand 2026)?",
+        "data": [
+            {"name": "Real Madrid", "value": "182 Mio. Follower", "sort_value": 182.0},
+            {"name": "FC Barcelona", "value": "145 Mio. Follower", "sort_value": 145.0},
+            {"name": "Paris Saint-Germain", "value": "66 Mio. Follower", "sort_value": 66.0},
+            {"name": "Manchester United", "value": "65 Mio. Follower", "sort_value": 65.0},
+            {"name": "Juventus Turin", "value": "61 Mio. Follower", "sort_value": 61.0},
+            {"name": "Manchester City", "value": "58 Mio. Follower", "sort_value": 58.0},
+            {"name": "FC Liverpool", "value": "49 Mio. Follower", "sort_value": 49.0},
+            {"name": "FC Bayern München", "value": "44 Mio. Follower", "sort_value": 44.0},
+            {"name": "FC Chelsea", "value": "43 Mio. Follower", "sort_value": 43.0},
+            {"name": "Arsenal FC", "value": "33 Mio. Follower", "sort_value": 33.0},
+            {"name": "Borussia Dortmund", "value": "22 Mio. Follower", "sort_value": 22.0},
+            {"name": "Atlético Madrid", "value": "18 Mio. Follower", "sort_value": 18.0}
+        ]
+    },
+    {
+        "question": "Welcher dieser Spieler hat in der Geschichte des Profifußballs die meisten Roten Karten (Platzverweise) kassiert?",
+        "data": [
+            {"name": "Gerardo Bedoya", "value": "46 Rote Karten", "sort_value": 46},
+            {"name": "Sergio Ramos", "value": "29 Rote Karten", "sort_value": 29},
+            {"name": "Cyril Rool", "value": "27 Rote Karten", "sort_value": 27},
+            {"name": "Alexis Ruano Delgado", "value": "22 Rote Karten", "sort_value": 22},
+            {"name": "Paolo Montero", "value": "21 Rote Karten", "sort_value": 21},
+            {"name": "Felipe Melo", "value": "20 Rote Karten", "sort_value": 20},
+            {"name": "Rafael Márquez", "value": "17 Rote Karten", "sort_value": 17},
+            {"name": "Gary Medel", "value": "15 Rote Karten", "sort_value": 15},
+            {"name": "Zlatan Ibrahimović", "value": "14 Rote Karten", "sort_value": 14},
+            {"name": "Patrick Vieira", "value": "12 Rote Karten", "sort_value": 12},
+            {"name": "Roy Keane", "value": "11 Rote Karten", "sort_value": 11},
+            {"name": "Pepe", "value": "10 Rote Karten", "sort_value": 10}
+        ]
+    },
+    {
+        "question": "Welcher dieser weltweiten Fußballvereine hat die höchste Anzahl an offiziell eingetragenen, zahlenden Mitgliedern?",
+        "data": [
+            {"name": "FC Bayern München", "value": "330.000 Mitglieder", "sort_value": 330000},
+            {"name": "River Plate", "value": "250.000 Mitglieder", "sort_value": 250000},
+            {"name": "SL Benfica", "value": "240.000 Mitglieder", "sort_value": 240000},
+            {"name": "Boca Juniors", "value": "230.000 Mitglieder", "sort_value": 230000},
+            {"name": "Borussia Dortmund", "value": "200.000 Mitglieder", "sort_value": 200000},
+            {"name": "Schalke 04", "value": "180.000 Mitglieder", "sort_value": 180000},
+            {"name": "FC Barcelona", "value": "150.000 Mitglieder", "sort_value": 150000},
+            {"name": "Eintracht Frankfurt", "value": "140.000 Mitglieder", "sort_value": 140000},
+            {"name": "1. FC Köln", "value": "135.000 Mitglieder", "sort_value": 135000},
+            {"name": "VfB Stuttgart", "value": "110.000 Mitglieder", "sort_value": 110000},
+            {"name": "Real Madrid", "value": "100.000 Mitglieder", "sort_value": 100000},
+            {"name": "Borussia Mönchengladbach", "value": "100.000 Mitglieder", "sort_value": 100000}
+        ]
+    },
+    {
+        "question": "Welches dieser historischen Fußballspiele im Stadion verzeichnete die höchste offizielle (oder präzise gezählte) Zuschauerzahl direkt vor Ort?",
+        "data": [
+            {"name": "WM-Finale 1950 (Uruguay vs. Brasilien)", "value": "173.850 Zuschauer", "sort_value": 173850},
+            {"name": "Europapokal-Finale 1960 (Real vs. Eintracht Frankfurt)", "value": "127.621 Zuschauer", "sort_value": 127621},
+            {"name": "FA-Cup Finale 1923 (Bolton vs. West Ham)", "value": "126.047 Zuschauer", "sort_value": 126047},
+            {"name": "WM-Finale 1986 (Argentinien vs. Westdeutschland)", "value": "114.600 Zuschauer", "sort_value": 114600},
+            {"name": "El Clásico 2018 (Barcelona vs. Real Madrid)", "value": "97.939 Zuschauer", "sort_value": 97939},
+            {"name": "WM-Finale 1994 (Brasilien vs. Italien)", "value": "94.194 Zuschauer", "sort_value": 94194},
+            {"name": "CL-Finale 2024 (Dortmund vs. Real Madrid)", "value": "86.211 Zuschauer", "sort_value": 86211},
+            {"name": "WM-Finale 2018 (Frankreich vs. Kroatien)", "value": "78.011 Zuschauer", "sort_value": 78011},
+            {"name": "CL-Finale 2022 (Real Madrid vs. Liverpool)", "value": "75.000 Zuschauer", "sort_value": 75000},
+            {"name": "WM-Finale 2014 (Deutschland vs. Argentinien)", "value": "74.738 Zuschauer", "sort_value": 74738},
+            {"name": "EM-Finale 2021 (Italien vs. England)", "value": "67.173 Zuschauer", "sort_value": 67173},
+            {"name": "WM-Eröffnungsspiel 2006 (Deutschland vs. Costa Rica)", "value": "66.000 Zuschauer", "sort_value": 66000}
+        ]
+    },
+    {
+        "question": "Welcher dieser Akteure hat die meisten Weltmeistertitel als aktiver Spieler gewonnen?",
+        "data": [
+            {"name": "Pelé (Brasilien)", "value": "3 WM-Titel", "sort_value": 3},
+            {"name": "Cafu (Brasilien)", "value": "2 WM-Titel", "sort_value": 2},
+            {"name": "Ronaldo (Brasilien)", "value": "2 WM-Titel", "sort_value": 2},
+            {"name": "Daniel Passarella (Argentinien)", "value": "2 WM-Titel", "sort_value": 2},
+            {"name": "Giuseppe Meazza (Italien)", "value": "2 WM-Titel", "sort_value": 2},
+            {"name": "Giovanni Ferrari (Italien)", "value": "2 WM-Titel", "sort_value": 2},
+            {"name": "Garrincha (Brasilien)", "value": "2 WM-Titel", "sort_value": 2},
+            {"name": "Gilmar (Brasilien)", "value": "2 WM-Titel", "sort_value": 2},
+            {"name": "Zagallo (Brasilien)", "value": "2 WM-Titel", "sort_value": 2},
+            {"name": "Franz Beckenbauer (Deutschland)", "value": "1 WM-Titel", "sort_value": 1},
+            {"name": "Diego Maradona (Argentinien)", "value": "1 WM-Titel", "sort_value": 1},
+            {"name": "Lionel Messi (Argentinien)", "value": "1 WM-Titel", "sort_value": 1}
+        ]
+    },
+    {
+        "question": "Welche Nationalmannschaft hat in der Geschichte der Weltmeisterschaften die meisten Platzverweise (Rote Karten) hinnehmen müssen?",
+        "data": [
+            {"name": "Brasilien", "value": "11 Rote Karten", "sort_value": 11},
+            {"name": "Argentinien", "value": "10 Rote Karten", "sort_value": 10},
+            {"name": "Uruguay", "value": "9 Rote Karten", "sort_value": 9},
+            {"name": "Italien", "value": "8 Rote Karten", "sort_value": 8},
+            {"name": "Kamerun", "value": "8 Rote Karten", "sort_value": 8},
+            {"name": "Deutschland", "value": "7 Rote Karten", "sort_value": 7},
+            {"name": "Niederlande", "value": "7 Rote Karten", "sort_value": 7},
+            {"name": "Mexiko", "value": "6 Rote Karten", "sort_value": 6},
+            {"name": "Frankreich", "value": "6 Rote Karten", "sort_value": 6},
+            {"name": "Portugal", "value": "6 Rote Karten", "sort_value": 6},
+            {"name": "Dänemark", "value": "4 Rote Karten", "sort_value": 4},
+            {"name": "England", "value": "3 Rote Karten", "sort_value": 3}
+        ]
+    },
+    {
+        "question": "Wer war der biologisch jüngste Torschütze in der Historie der Weltmeisterschaften?",
+        "data": [
+            {"name": "Pelé (1958)", "value": "17.6 Jahre alt", "sort_value": 17.6},
+            {"name": "Manuel Rosas (1930)", "value": "18.3 Jahre alt", "sort_value": 18.3},
+            {"name": "Gavi (2022)", "value": "18.3 Jahre alt", "sort_value": 18.3},
+            {"name": "Michael Owen (1998)", "value": "18.5 Jahre alt", "sort_value": 18.5},
+            {"name": "Nicolae Kovacs (1930)", "value": "18.6 Jahre alt", "sort_value": 18.6},
+            {"name": "Dmitry Sychev (2002)", "value": "18.7 Jahre alt", "sort_value": 18.7},
+            {"name": "Lionel Messi (2006)", "value": "18.9 Jahre alt", "sort_value": 18.9},
+            {"name": "Julian Green (2014)", "value": "19.0 Jahre alt", "sort_value": 19.0},
+            {"name": "Divock Origi (2014)", "value": "19.2 Jahre alt", "sort_value": 19.2},
+            {"name": "Jude Bellingham (2022)", "value": "19.4 Jahre alt", "sort_value": 19.4},
+            {"name": "Kylian Mbappé (2018)", "value": "19.5 Jahre alt", "sort_value": 19.5},
+            {"name": "Bukayo Saka (2022)", "value": "21.2 Jahre alt", "sort_value": 21.2}
         ]
     },
     {
@@ -584,6 +592,46 @@ CATEGORIES["Fußball"].extend([
             {"name": "Zlatan Ibrahimović", "value": "202 Assists", "sort_value": 202},
             {"name": "Karim Benzema", "value": "196 Assists", "sort_value": 196},
             {"name": "Kylian Mbappé", "value": "152 Assists", "sort_value": 152}
+        ]
+    }
+])
+
+CATEGORIES["Natur & Wissenschaft"].extend([
+    {
+        "question": "Welches dieser bekannten Metalle besitzt den höchsten Schmelzpunkt (in Grad Celsius)?",
+        "data": [
+            {"name": "Wolfram", "value": "3.422 °C", "sort_value": 3422},
+            {"name": "Rhenium", "value": "3.186 °C", "sort_value": 3186},
+            {"name": "Osmium", "value": "3.033 °C", "sort_value": 3033},
+            {"name": "Tantal", "value": "3.017 °C", "sort_value": 3017},
+            {"name": "Molybdän", "value": "2.623 °C", "sort_value": 2623},
+            {"name": "Iridium", "value": "2.446 °C", "sort_value": 2446},
+            {"name": "Platin", "value": "1.768 °C", "sort_value": 1768},
+            {"name": "Titan", "value": "1.668 °C", "sort_value": 1668},
+            {"name": "Eisen", "value": "1.538 °C", "sort_value": 1538},
+            {"name": "Kupfer", "value": "1.085 °C", "sort_value": 1085},
+            {"name": "Gold", "value": "1.064 °C", "sort_value": 1064},
+            {"name": "Aluminium", "value": "660 °C", "sort_value": 660}
+        ]
+    }
+])
+
+CATEGORIES["Geografie"].extend([
+    {
+        "question": "Welche dieser weltweiten Rieseninseln besitzt flächenmäßig die größte Ausdehnung? (Kontinente wie Australien ausgeschlossen!)",
+        "data": [
+            {"name": "Grönland", "value": "2.166.086 km²", "sort_value": 2166086},
+            {"name": "Neu-Guinea", "value": "785.753 km²", "sort_value": 785753},
+            {"name": "Borneo", "value": "743.330 km²", "sort_value": 743330},
+            {"name": "Madagaskar", "value": "587.041 km²", "sort_value": 587041},
+            {"name": "Baffininsel", "value": "507.451 km²", "sort_value": 507451},
+            {"name": "Sumatra", "value": "473.481 km²", "sort_value": 473481},
+            {"name": "Honshu", "value": "227.960 km²", "sort_value": 227960},
+            {"name": "Großbritannien", "value": "209.331 km²", "sort_value": 209331},
+            {"name": "Victoria-Insel", "value": "217.291 km²", "sort_value": 217291},
+            {"name": "Ellesmere-Insel", "value": "196.236 km²", "sort_value": 196236},
+            {"name": "Sulawesi", "value": "174.600 km²", "sort_value": 174600},
+            {"name": "Neuseeland Südinsel", "value": "150.437 km²", "sort_value": 150437}
         ]
     }
 ])
